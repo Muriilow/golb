@@ -4,21 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mur1il0w's Blog</title>
+
+    <!-- Adicione as Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f6eee1',
+                            100: '#f6eee1', 
+                            500: '#696357',
+                            600: '#2B251B',
+                            900: '#000000',
+                        },
+                    },
+                    fontFamily: {
+                        'sans': ['Nunito Sans', 'sans-serif'],
+                        'serif': ['Yeseva One', 'serif'],
+                    },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                'li::marker': {
+                                    color: '#2b231b',
+                                },
+                                'ul > li::marker': {
+                                    color: '#2b231b',
+                                },
+                                'ol > li::marker': {
+                                    color: '#2b251b',
+                                    fontWeight: '600',
+                                },
+                                'blockquote': {
+                                    borderLeftColor: '#BAAE98', // E esta linha
+                                    color: "#696357",
+                                    borderLeftWidth: '0.25rem',
+                                    borderLeftStyle: 'solid',
+                                    paddingLeft: '1rem',
+                                    fontStyle: 'italic',
+                                },
+                                'strong': {
+                                    fontWeight: '700',
+                                },
+                                'h1, h2': {
+                                    fontFamily: 'Yeseva One, serif',
+                                    color: "#000000",
+                                },
+                                'h3, h4, h5, h6': {
+                                    fontWeight: '900',
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-primary-50 font-sans"> 
     <!-- Navigation Bar -->
-    <nav class="bg-white shadow-sm border-b">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="bg-primary-50"> 
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-primary-500 shadow-sm">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-xl font-bold text-gray-900">MyBlog</span>
+                    <a href="/" class="text-xl font-bold text-primary-900 font-serif">Mur1il0w</a> 
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="/" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="/about" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
-                    <a href="/contact" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    <a href="/about" class="text-primary-600 hover:text-primary-900 px-3 py-2 rounded-md transition-colors">About</a> 
+                    <a href="/contact" class="text-primary-600 hover:text-primary-900 px-3 py-2 rounded-md transition-colors ">Contact</a> 
                 </div>
             </div>
         </div>
@@ -26,14 +86,15 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1>My Posts</h1>
-        <ul class="">
+        <h1 class="text-6xl font-bold text-primary-900 my-4 font-serif">My Posts</h1>
+        <p class="text-primary-500 mb-4">What I've being doing lately...</p>
+        <ul class="space-y-6">
             {{range .Posts}}
-                <a href="/posts/{{.Slug}}" class="">
-                    <li>
-                        <h2>{{.Title}}</h2>
-                        <p>{{.Date}}</p>
-                        <p>{{.Description}}</p>
+                <a href="/posts/{{.Slug}}" class="block bg-primary-50 rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow duration-200">
+                    <li class="list-none">
+                        <h2 class="text-xl font-semibold text-primary-900 mb-2 font-serif">{{.Title}}</h2>
+                        <p class="text-sm text-primary-500 mb-3">{{.Date}}</p>
+                        <p class="text-primary-600 leading-relaxed">{{.Description}}</p>
                     </li>
                 </a>
             {{end}}
@@ -41,15 +102,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t mt-12">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <footer class="bg-primary-50 mt-12"> 
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t-2 border-primary-900">
             <div class="flex justify-between items-center">
-                <span class="text-gray-600 text-sm">© 2025 Muriilow. All rights reserved.</span>
-                <div class="flex space-x-6">
-                    <a href="/" class="text-gray-600 hover:text-gray-900 text-sm">Home</a>
-                    <a href="/about" class="text-gray-600 hover:text-gray-900 text-sm">About</a>
-                    <a href="/contact" class="text-gray-600 hover:text-gray-900 text-sm">Contact</a>
-                </div>
+                <span class="text-primary-200 text-sm">© 2025 Muriilow. All rights reserved.</span> 
             </div>
         </div>
     </footer>
