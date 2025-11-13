@@ -12,61 +12,6 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f6eee1',
-                            100: '#f6eee1', 
-                            500: '#696357',
-                            600: '#2B251B',
-                            900: '#000000',
-                        },
-                    },
-                    fontFamily: {
-                        'sans': ['Nunito Sans', 'sans-serif'],
-                        'serif': ['Yeseva One', 'serif'],
-                    },
-                    typography: {
-                        DEFAULT: {
-                            css: {
-                                'li::marker': {
-                                    color: '#2b231b',
-                                },
-                                'ul > li::marker': {
-                                    color: '#2b231b',
-                                },
-                                'ol > li::marker': {
-                                    color: '#2b251b',
-                                    fontWeight: '600',
-                                },
-                                'blockquote': {
-                                    borderLeftColor: '#BAAE98', // E esta linha
-                                    color: "#696357",
-                                    borderLeftWidth: '0.25rem',
-                                    borderLeftStyle: 'solid',
-                                    paddingLeft: '1rem',
-                                    fontStyle: 'italic',
-                                },
-                                'strong': {
-                                    fontWeight: '700',
-                                },
-                                'h1, h2': {
-                                    fontFamily: 'Yeseva One, serif',
-                                    color: "#000000",
-                                },
-                                'h3, h4, h5, h6': {
-                                    fontWeight: '900',
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 <body class="bg-primary-50 font-sans"> 
     <!-- Navigation Bar -->
