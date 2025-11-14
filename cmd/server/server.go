@@ -27,6 +27,8 @@ func run(args []string, stdout io.Writer) error {
 		Dir: "posts",
 	}
 
+	mux.Handle("GET /static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+
 	postTemplate := template.Must(template.ParseFiles("post.gohtml"))
 	mux.HandleFunc("GET /posts/{slug}", golb.PostHandler(postReader, postTemplate))
 
@@ -39,5 +41,6 @@ func run(args []string, stdout io.Writer) error {
 		log.Fatal(err)
 	}
 	
+	log.Println("servidor rodando :3030")
 	return nil
 }
