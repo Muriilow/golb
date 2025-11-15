@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@config "./tailwind-config.js";
-
 @theme {
     --font-sans: "Nunito Sans", serif;
     --font-serif: "Yeseva One", sans-serif;
