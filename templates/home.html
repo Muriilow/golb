@@ -11,17 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/index.css">     
 </head>
-<body class="bg-yellow-50 font-sans"> 
+<body class="bg-primary-50 font-sans"> 
     <!-- Navigation Bar -->
-    <nav class="bg-yellow-50"> 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-500 shadow-sm">
+    <nav> 
+        <div class="max-w-4xl mx-auto m-4 px-4 sm:px-6 lg:px-8 bg-primary-900 rounded-xl">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="/" class="text-xl font-bold text-black font-serif">Mur1il0w</a> 
+                    <a href="/" class="text-xl font-bold text-white font-serif">Mur1il0w</a> 
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="/about" class="text-gray-900 hover:text-black px-3 py-2 rounded-md transition-colors">About</a> 
-                    <a href="/contact" class="text-gray-900 hover:text-black px-3 py-2 rounded-md transition-colors ">Contact</a> 
+                    <a href="/about" class="text-white hover:text-primary-100 px-3 py-2 rounded-md transition-colors">About</a> 
+                    <a href="/contact" class="text-white hover:text-primary-100 px-3 py-2 rounded-md transition-colors ">Contact</a> 
                 </div>
             </div>
         </div>
@@ -29,14 +29,14 @@
 
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-6xl font-bold text-black my-4 font-serif">My Posts</h1>
-        <p class="text-gray-500 mb-4">What I've being doing lately...</p>
+        <h1 class="text-6xl font-bold text-primary-900 my-4 font-serif">My Posts</h1>
+        <p class="text-primary-300 mb-4">What I've being doing lately...</p>
         <ul class="space-y-6">
             {{range .Posts}}
-                <a href="/posts/{{.Slug}}" class="block bg-yellow-50 rounded-lg shadow-sm border p-6 hover:shadow-md transition-shadow duration-200">
+                <a href="/posts/{{.Slug}}" class="block bg-primary-100 rounded-lg shadow-sm p-6 transition-transform duration-300 hover:scale-105">
                     <li class="list-none">
-                        <h2 class="text-xl font-semibold text-black mb-2 font-serif">{{.Title}}</h2>
-                        <p class="text-sm text-gray-500 mb-3">{{.Date}}</p>
+                        <h2 class="text-xl font-semibold text-primary-900 mb-2 font-serif">{{.Title}}</h2>
+                        <p class="text-sm text-primary-300 mb-3">{{.Date}}</p>
                         <p class="text-gray-900 leading-relaxed">{{.Description}}</p>
                     </li>
                 </a>
@@ -45,7 +45,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-yellow-50 mt-12"> 
+    <footer class="mt-12"> 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t-2 border-gray-900">
             <div class="flex justify-between items-center">
                 <span class="text-primary-200 text-sm">© 2025 Muriilow. All rights reserved.</span> 

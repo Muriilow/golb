@@ -17,9 +17,8 @@ func main() {
 		fmt.Fprintf(os.Stderr, "%s\n", err)
 		os.Exit(1)
 	}
-
-
 }
+
 func run(args []string, stdout io.Writer) error {
 	mux := http.NewServeMux()
 
@@ -29,10 +28,10 @@ func run(args []string, stdout io.Writer) error {
 
 	mux.Handle("GET /static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	postTemplate := template.Must(template.ParseFiles("post.gohtml"))
+	postTemplate := template.Must(template.ParseFiles("templates/post.html"))
 	mux.HandleFunc("GET /posts/{slug}", golb.PostHandler(postReader, postTemplate))
 
-	indexTemplate := template.Must(template.ParseFiles("index.gohtml"))
+	indexTemplate := template.Must(template.ParseFiles("templates/home.html"))
 	mux.HandleFunc("GET /", golb.IndexHandler(postReader, indexTemplate))
 
 	err := http.ListenAndServe(":3030", mux)
@@ -41,6 +40,5 @@ func run(args []string, stdout io.Writer) error {
 		log.Fatal(err)
 	}
 	
-	log.Println("servidor rodando :3030")
 	return nil
 }
