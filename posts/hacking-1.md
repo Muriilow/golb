@@ -1,7 +1,7 @@
 ;;;
 {
     "title": "Hacking 1",
-    "description": "Explaining how Im a cool hacker",
+    "description": "Explaining how Im a cool hacker And how nonchalant Im",
     "date": "2025-11-6",
     "author": "Mur1il0w"
 }
