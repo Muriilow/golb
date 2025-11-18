@@ -4,16 +4,15 @@
 @theme {
     --font-sans: "Nunito Sans", serif;
     --font-serif: "Bebas Neue", sans-serif;
-    --color-white: #d6d0d0;
+    --color-white: #f8f8f8;
+    --color-black: #171513;
     --color-green: #6c8e5c;
-    --color-primary-50: #e9e4e0;
-    --color-primary-100: #d6cfc9;
-    --color-primary-200: #5f645d;
-    --color-primary-300: #6c655f;
-    --color-primary-700: #36312d;
-    --color-primary-800: #2a2f28;
-    --color-primary-900: #0f0d0e;
+    --color-red: #d00000;
+    --color-grey: #b5b5b5;
+    --color-grey-100: #767676;
+    --color-grey-900: #1c1c1c;
 }
-.repeating-text {
-    animation: scrollText 20s linear infinite;
+.repeating-bg {
+    background-color: #505050;
+    background-image: url('/static/images/black-linen.png');
 }

@@ -11,16 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Yeseva+One&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/index.css">     
 </head>
-<body class="bg-primary-200 font-sans"> 
+<body class="absolute repeating-bg inset-0 opacity-100 bg-cover bg-center font-sans"> 
     <nav> 
-        <div class="text-xl max-w-4xl mx-auto m-4 px-4 sm:px-6 lg:px-8 bg-primary-900 rounded-sm font-serif">
-            <div class="flex justify-between h-16">
+        <div class="bg-black text-2xl max-w-4xl mx-auto m-4 p-2 sm:p-3 lg:p-4 rounded-sm font-serif">
+            <div class="flex justify-between">
                 <div class="flex items-center">
-                    <a href="/" class="font-bold text-white font-serif">Mur1il0w</a> 
+                    <a href="/" class="font-bold text-white font-serif"> 
+                        <img class="absolute -top-1 w-1/10  p-1" src="/static/images/logo2.svg" alt="Mur1il0w logo">
+                    </a>
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="/about" class="text-white hover:text-primary-100 px-3 py-2 rounded-md transition-colors">About</a> 
-                    <a href="/contact" class="text-white hover:text-primary-100 px-3 py-2 rounded-md transition-colors ">Contact</a> 
+                    <a href="/about" class="text-white hover:text-green px-3 py-2 rounded-md transition-colors">About</a> 
+                    <a href="/contact" class="text-white hover:text-green px-3 py-2 rounded-md transition-colors ">Contact</a> 
                 </div>
             </div>
         </div>
@@ -28,13 +30,13 @@
 
     <!-- Main Content -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <article class="bg-primary-900 shadow-sm border-8 border-black rounded-sm"> 
+        <article class="bg-black shadow-sm border-8 border-black rounded-sm"> 
             <!-- Post Header -->
-            <header class="px-3 py-4 bg-primary-900 border-b border-primary-100"> 
+            <header class="px-3 py-4 border-b border-white"> 
                 <div class="flex justify-between items-start mb-4">
                     <div>
                         <h1 class="text-5xl font-bold text-green mb-4 font-serif">{{.Title}}</h1> 
-                        <div class="flex items-center text-primary-100"> 
+                        <div class="flex items-center text-grey"> 
                             <span class="font-medium">{{.Author}}</span>
                             {{if .Date}}
                             <span class="mx-2">•</span>
@@ -42,29 +44,27 @@
                             {{end}}
                         </div>
                     </div>
-                    <div class="w-[300px] text-justify text-xs text-primary-50 font-serif">
-                        <div class="repeating-text">
-                            {{range $i := 10}}{{$.Description}} {{end}}
-                        </div>
+                    <div class="w-[300px] text-justify text-xs text-grey-100 font-serif">
+                        {{range $i := 10}}{{$.Description}} {{end}}
                     </div>
                 </div>
             </header>
 
             <!-- Post Content -->
             <div class="px-6 py-8 prose prose-lg max-w-none 
-                       prose-p:text-primary-50
-                       prose-code:text-primary-50
-                       prose-strong:text-primary-50
+                       prose-p:text-white
+                       prose-code:text-white
+                       prose-strong:text-white
                        prose-headings:font-serif
                        prose-headings:text-white
-                       prose-li:marker:text-primary-50
-                       prose-li:text-primary-50
-                       prose-ol:text-primary-50
-                       prose-ul:text-primary-50
-                       prose-blockquote:border-primary-100
-                       prose-blockquote:bg-primary-800
+                       prose-li:marker:text-white
+                       prose-li:text-white
+                       prose-ol:text-white
+                       prose-ul:text-white
+                       prose-blockquote:border-white
+                       prose-blockquote:bg-grey-900
                        prose-blockquote:rounded-md
-                       prose-a:text-primary-50 hover:prose-a:text-primary-100">
+                       prose-a:text-white">
                 {{.Content}}
             </div>
         </article>
@@ -72,9 +72,9 @@
 
     <!-- Footer -->
     <footer class="mt-12"> 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t-2 border-primary-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t-2 border-black">
             <div class="flex justify-between items-center">
-                <span class="text-primary-900 text-sm">© 2025 Muriilow. All rights reserved.</span>
+                <img class="w-1/4" src="/static/images/logo.svg" alt="Mur1il0w logo">
                 <img class="w-1/4" src="/static/images/barcode.png" alt="barcode tryhackme link">
             </div>
         </div>
