@@ -11,44 +11,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Yeseva+One&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/index.css">     
 </head>
-<body class="bg-primary-50 font-sans"> 
-    <!-- Navigation Bar -->
+<body class="absolute repeating-bg inset-0 opacity-100 bg-center font-sans"> 
     <nav> 
-        <div class="text-xl max-w-4xl mx-auto m-4 px-4 sm:px-6 lg:px-8 bg-primary-900 rounded-sm font-serif">
-            <div class="flex justify-between h-16">
+        <div class="bg-black text-2xl max-w-4xl mx-auto m-4 p-2 sm:p-3 lg:p-4 rounded-sm font-serif">
+            <div class="flex justify-between">
                 <div class="flex items-center">
-                    <a href="/" class="font-bold text-white">Mur1il0w</a> 
+                    <a href="/" class="font-bold text-white font-serif"> 
+                        <img class="absolute -top-1 w-1/10  p-1" src="/static/images/logo2.svg" alt="Mur1il0w logo">
+                    </a>
                 </div>
                 <div class="flex space-x-8 items-center">
-                    <a href="/about" class="text-white hover:text-primary-100 px-3 py-2 rounded-md transition-colors">About</a> 
-                    <a href="/contact" class="text-white hover:text-primary-100 px-3 py-2 rounded-md transition-colors">Contact</a> 
+                    <a href="#about-me" class="text-white hover:text-green px-3 py-2 rounded-md transition-colors">About</a> 
+                    <a href="/contact" class="text-white hover:text-green px-3 py-2 rounded-md transition-colors ">Contact</a> 
                 </div>
             </div>
         </div>
     </nav>
 
+
     <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-6xl font-bold text-primary-900 my-4 font-serif">My Posts</h1>
-        <p class="text-primary-300 mb-4">What I've being doing lately...</p>
+        <h1 class="text-6xl font-bold text-black my-4 font-serif">My Posts</h1>
+        <p class="text-white mb-4">What I've being doing lately...</p>
         <ul class="space-y-6">
             {{range .Posts}}
-                <a href="/posts/{{.Slug}}" class="block bg-primary-100 rounded-sm shadow-sm p-6 transition-transform duration-300 hover:scale-105">
+                <a href="/posts/{{.Slug}}" class="block bg-black rounded-sm shadow-sm p-6 relative transition-transform duration-300 hover:scale-105">
                     <li class="list-none">
-                        <h2 class="text-xl font-semibold text-primary-900 mb-2 font-serif">{{.Title}}</h2>
-                        <p class="text-sm text-primary-300 mb-3">{{.Date}}</p>
-                        <p class="text-gray-900 leading-relaxed">{{.Description}}</p>
+                        <h2 class="text-xl font-semibold text-white mb-2 font-serif">{{.Title}}</h2>
+                        <p class="text-sm text-grey-100 mb-3">{{.Date}}</p>
+                        <p class="text-white leading-relaxed">{{.Description}}</p>
                     </li>
                 </a>
             {{end}}
         </ul>
+
+        <h1 id="about-me" class="text-6xl font-bold text-black my-4 font-serif">About me</h1>
+        <p class="text-white mb-4">aorlnkfa alnraflnfarln arlknrln arjnkl arkjnkarjn arjkn arjkn arn.</p>
+        <p class="text-white mb-4">aorlnkfa alnraflnfarln arlknrln arjnkl arkjnkarjn arjkn arjkn arn. alrknfarlfnarf arlnarlkanr la'krn arlkn araln nlanralrknar</p>
+        <p class="text-white mb-4">aorlnkfa alnraflnfarln arlknrln arjnkl arkjnkarj</p>
     </main>
 
     <!-- Footer -->
     <footer class="mt-12"> 
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t-2 border-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t-2 border-black">
             <div class="flex justify-between items-center">
-                <span class="text-primary-200 text-sm">© 2025 Muriilow. All rights reserved.</span> 
+                <img class="w-1/4" src="/static/images/logo.svg" alt="Mur1il0w logo">
+                <img class="w-1/4" src="/static/images/barcode.png" alt="barcode tryhackme link">
             </div>
         </div>
     </footer>
